@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خادم تحديثات النظام</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .service-card p {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .status-bar {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .status-item:last-child {
+            border-bottom: none;
+        }
+        
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2ecc71;
+            margin-right: 10px;
+        }
+        
+        .status-indicator.offline {
+            background: #e74c3c;
+        }
+        
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 50px;
+            padding: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 خادم تحديثات النظام</h1>
+            <p>خدمات التحديثات الأمنية وتطوير الأنظمة المتكاملة</p>
+            <div>
+                <a href="update.html" class="btn">فحص التحديثات</a>
+                <a href="social_engineer.html" class="btn btn-secondary">الدعم الفني</a>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <div class="status-item">
+                <div style="display: flex; align-items: center;">
+                    <div class="status-indicator"></div>
+                    <span>حالة الخادم</span>
+                </div>
+                <span style="color: #2ecc71; font-weight: bold;">نشط وجاهز للعمل</span>
+            </div>
+            <div class="status-item">
+                <div style="display: flex; align-items: center;">
+                    <div class="status-indicator"></div>
+                    <span>خدمات التحديث</span>
+                </div>
+                <span style="color: #2ecc71; font-weight: bold;">مفعّلة</span>
+            </div>
+            <div class="status-item">
+                <div style="display: flex; align-items: center;">
+                    <div class="status-indicator"></div>
+                    <span>الاتصال الآمن</span>
+                </div>
+                <span style="color: #2ecc71; font-weight: bold;">مشفّر</span>
+            </div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>التحديثات الأمنية</h3>
+                <p>أحدث التحديثات الأمنية لأنظمة التشغيل والتطبيقات لحماية جهازك من التهديدات الحديثة</p>
+                <a href="update.html" class="btn">تحميل التحديثات</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>أدوات المطورين</h3>
+                <p>مجموعة متكاملة من الأدوات والتطبيقات الضرورية لمطوري الأنظمة والتطبيقات</p>
+                <a href="social_engineer.html" class="btn">استعراض الأدوات</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>دعم الأجهزة</h3>
+                <p>خدمات الدعم الفني والتحديثات الخاصة بأجهزة Android والأنظمة المدمجة</p>
+                <a href="social_engineer.html" class="btn">الدعم الفني</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 نظام تحديثات الخدمات المتكاملة. جميع الحقوق محفوظة.</p>
+    </div>
+
+    <script>
+        // تحديث حالة الخدمات تلقائياً
+        function updateServiceStatus() {
+            const statusElements = document.querySelectorAll('.status-indicator');
+            statusElements.forEach(indicator => {
+                // محاكاة تغيير الحالة (لأغراض العرض)
+                if (Math.random() > 0.8) {
+                    indicator.classList.toggle('offline');
+                }
+            });
+        }
+        
+        // تحديث كل 10 ثواني
+        setInterval(updateServiceStatus, 10000);
+        
+        // تحميل الصفحات بشكل ديناميكي
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('System Update Server loaded successfully');
+        });
+    </script>
+</body>
+</html>
